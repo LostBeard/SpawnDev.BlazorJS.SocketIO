@@ -15,6 +15,7 @@ builder.Services.AddBlazorJSRuntime();
 await Socket.Init();
 // A Socket can be created when needed.
 // Here we are creating a socket.io Socket at startup and registering it as a service
+// below tells the socket the uri of our socketio-demo-server
 var socket = new Socket("http://localhost:3000");
 builder.Services.AddSingleton(socket);
 // example of listening for a message on a Socket
