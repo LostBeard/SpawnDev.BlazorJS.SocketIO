@@ -12,7 +12,12 @@ namespace SpawnDev.BlazorJS.SocketIO
         // CDN 
         // https://cdn.socket.io/
         static Task? _Init = null;
-        public static Task Init(string? src = null) => _Init ??= BlazorJSRuntime.JS.LoadScript(!string.IsNullOrEmpty(src) ? src : "_content/SpawnDev.BlazorJS.SocketIO/socket.io.min.js");
+        /// <summary>
+        /// Returns a Task that completes after loading the socket.io library
+        /// </summary>
+        /// <param name="src"></param>
+        /// <returns></returns>
+        public static Task Init(string? src = null) => _Init ??= BlazorJSRuntime.JS.LoadScript(!string.IsNullOrEmpty(src) ? src : "_content/SpawnDev.BlazorJS.SocketIO/socket.io.min.js", "io");
         /// <summary>
         /// Deserialization constructor
         /// </summary>
@@ -86,6 +91,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
+        /// <param name="timeout"></param>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -98,6 +104,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="timeout"></param>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -109,6 +116,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
+        /// <param name="timeout"></param>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -121,6 +129,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
         /// <typeparam name="T"></typeparam>
+        /// <param name="timeout"></param>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
@@ -172,7 +181,6 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// </summary>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
-        /// <returns></returns>
         public void EmitApply(string eventName, object?[]? args)
         {
             if (args == null || args.Length == 0) JSRef!.CallVoid("emit", eventName);
@@ -183,13 +191,10 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// </summary>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
-        /// <returns></returns>
         public void Emit(string eventName, params object?[]? args)
         {
             if (args == null || args.Length == 0) JSRef!.CallVoid("emit", eventName);
             else JSRef!.CallApplyVoid("emit", new object[] { eventName }.Concat(args).ToArray());
         }
-
-
     }
 }
