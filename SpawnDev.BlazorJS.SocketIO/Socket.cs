@@ -136,8 +136,8 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <param name="args"></param>
         /// <returns></returns>
         public Task EmitWithAck(string eventName, params object?[]? args)
-        => args == null || args.Length == 0 ? JSRef!.CallVoidAsync("emit", eventName) :
-            JSRef!.CallApplyVoidAsync("emit", new object[] { eventName }.Concat(args).ToArray());
+        => args == null || args.Length == 0 ? JSRef!.CallVoidAsync("emitWithAck", eventName) :
+            JSRef!.CallApplyVoidAsync("emitWithAck", new object[] { eventName }.Concat(args).ToArray());
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
@@ -146,8 +146,8 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <param name="args"></param>
         /// <returns></returns>
         public Task<T> EmitWithAck<T>(string eventName, params object?[]? args)
-        => args == null || args.Length == 0 ? JSRef!.CallAsync<T>("emit", eventName) :
-            JSRef!.CallApplyAsync<T>("emit", new object[] { eventName }.Concat(args).ToArray());
+        => args == null || args.Length == 0 ? JSRef!.CallAsync<T>("emitWithAck", eventName) :
+            JSRef!.CallApplyAsync<T>("emitWithAck", new object[] { eventName }.Concat(args).ToArray());
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
@@ -155,8 +155,8 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <param name="args"></param>
         /// <returns></returns>
         public Task EmitWithAckApply(string eventName, object?[]? args)
-        => args == null || args.Length == 0 ? JSRef!.CallVoidAsync("emit", eventName) :
-            JSRef!.CallApplyVoidAsync("emit", new object[] { eventName }.Concat(args).ToArray());
+        => args == null || args.Length == 0 ? JSRef!.CallVoidAsync("emitWithAck", eventName) :
+            JSRef!.CallApplyVoidAsync("emitWithAck", new object[] { eventName }.Concat(args).ToArray());
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
@@ -165,25 +165,31 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <param name="args"></param>
         /// <returns></returns>
         public Task<T> EmitWithAckApply<T>(string eventName, object?[]? args)
-        => args == null || args.Length == 0 ? JSRef!.CallAsync<T>("emit", eventName) :
-            JSRef!.CallApplyAsync<T>("emit", new object[] { eventName }.Concat(args).ToArray());
+        => args == null || args.Length == 0 ? JSRef!.CallAsync<T>("emitWithAck", eventName) :
+            JSRef!.CallApplyAsync<T>("emitWithAck", new object[] { eventName }.Concat(args).ToArray());
         /// <summary>
         /// Emits an event to the socket identified by the string name. Any other parameters can be included. All serializable data structures are supported, including Buffer.
         /// </summary>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public bool EmitApply(string eventName, object?[]? args) =>
-            args == null || args.Length == 0 ? JSRef!.Call<bool>("emit", eventName) :
-            JSRef!.CallApply<bool>("emit", new object[] { eventName }.Concat(args).ToArray());
+        public void EmitApply(string eventName, object?[]? args)
+        {
+            if (args == null || args.Length == 0) JSRef!.CallVoid("emit", eventName);
+            else JSRef!.CallApplyVoid("emit", new object[] { eventName }.Concat(args).ToArray());
+        }
         /// <summary>
         /// Emits an event to the socket identified by the string name. Any other parameters can be included. All serializable data structures are supported, including Buffer.
         /// </summary>
         /// <param name="eventName"></param>
         /// <param name="args"></param>
         /// <returns></returns>
-        public bool Emit(string eventName, params object?[]? args) =>
-            args == null || args.Length == 0 ? JSRef!.Call<bool>("emit", eventName) :
-            JSRef!.CallApply<bool>("emit", new object[] { eventName }.Concat(args).ToArray());
+        public void Emit(string eventName, params object?[]? args)
+        {
+            if (args == null || args.Length == 0) JSRef!.CallVoid("emit", eventName);
+            else JSRef!.CallApplyVoid("emit", new object[] { eventName }.Concat(args).ToArray());
+        }
+
+
     }
 }
