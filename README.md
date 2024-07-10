@@ -37,7 +37,7 @@ Add to `index.html`
 var socket = new Socket(socketIoServerUrl);
 ```
 
-## Counter example from repo
+## Shared Counter example from repo
 In this example, when any user changes the counter value by clicking the button all users see the value change.
 
 Program.cs
