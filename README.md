@@ -203,11 +203,6 @@ io.on("connection", (socket) => {
         ];
         callback(weather);
     });
-    socket.on("testTupleReturn", (callback) => {
-        console.log("socket testTupleReturn", socket.id);
-        // returning tuple can be useful for returning an (error?, result?) pair
-        callback([null, true]);
-    });
 });
 
 // listen
