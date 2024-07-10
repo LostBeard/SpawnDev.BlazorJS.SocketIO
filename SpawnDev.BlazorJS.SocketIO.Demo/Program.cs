@@ -14,15 +14,13 @@ builder.Services.AddBlazorJSRuntime();
 // Load the Socket.IO Javascript library. Can be loaded using a <script> tag in the index.html instead
 await Socket.Init();
 // A Socket can be created when needed.
-// Here we are creating it at startup and registering it as a service
+// Here we are creating a socket.io Socket at startup and registering it as a service
 var socket = new Socket("http://localhost:3000");
 builder.Services.AddSingleton(socket);
-// example of listening for a message
+// example of listening for a message on a Socket
 socket.On<string>("welcome", welcomeMessage =>
 {
     Console.WriteLine($"Welcome received: {welcomeMessage}");
 });
-
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 await builder.Build().RunAsync();
