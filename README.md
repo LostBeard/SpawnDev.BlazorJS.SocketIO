@@ -32,3 +32,14 @@ Add to `index.html`
 ```
 (Alternatively `await Socket.Init()` can be used in C# to load the SocketIO library at runtime)  
 
+**Create a Socket**
+```cs
+void InitSocket(){
+	Socket = new Socket("", options);
+	Socket.OnConnect += Socket_OnConnect;
+	Socket.OnDisconnect += Socket_OnDisconnect;
+	// add event listeners for server emitted events
+	Socket.On<SpeerPeerContext, string, Array, Function?>(nameof(_RelayedCall), _RelayedCall);
+}
+```
+

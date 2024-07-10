@@ -1,0 +1,16 @@
+{
+  "name": "socketio-demo-server",
+  "version": "0.0.0",
+  "description": "socketio-demo-server",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  },
+  "eslintConfig": {},
+  "dependencies": {
+    "socket.io": "^4.7.5"
+  }
+}

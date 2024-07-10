@@ -11,7 +11,7 @@
 		<DebugType>Embedded</DebugType>
 		<Title>SpawnDev.BlazorJS.SocketIO</Title>
 		<Authors>LostBeard</Authors>
-		<Description>Socket.IO bidirectional and low-latency communication for every platform, in Blazor WebAssembly</Description>
+		<Description>Socket.IO, bidirectional and low-latency communication for every platform, in Blazor WebAssembly</Description>
 		<PackageProjectUrl>https://github.com/LostBeard/SpawnDev.BlazorJS.SocketIO</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
