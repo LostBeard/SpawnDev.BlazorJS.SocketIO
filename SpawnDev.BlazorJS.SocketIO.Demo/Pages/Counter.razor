@@ -13,7 +13,7 @@
 
 @code {
     private int currentCount = 0;
-    private string countChangedBy = "[None]";
+    private string countChangedBy = "";
 
     private void IncrementCount()
     {
@@ -25,7 +25,6 @@
         Socket.OnDisconnect += Socket_OnDisconnect;
         Socket.On<string, int>("countChanged", Socket_OnCountChanged);
         _ = TryUpdateCount();
-        StateHasChanged();
     }
     void Socket_OnCountChanged(string changedBy, int newValue)
     {
