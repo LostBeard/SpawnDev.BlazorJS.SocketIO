@@ -87,7 +87,12 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// Sets a modifier for a subsequent event emission that the callback will be called with an error when the given number of milliseconds have elapsed without an acknowledgement from the server:
         /// </summary>
         /// <param name="timeout"></param>
-        public void Timeout(int timeout) => JSRef!.CallVoid("timeout", timeout);
+        /// <returns>this instance to allow call chaining</returns>
+        public Socket Timeout(int timeout)
+        {
+            JSRef!.CallVoid("timeout", timeout);
+            return this;
+        }
         /// <summary>
         /// Promised-based version of emitting and expecting an acknowledgement from the server:
         /// </summary>
