@@ -5,7 +5,7 @@ Bidirectional and low-latency communication for every platform.
 
 **SpawnDev.BlazorJS.SocketIO** brings the amazing [socket.io](https://github.com/socketio/socket.io) library to Blazor WebAssembly.
 
-**SpawnDev.BlazorJS.SocketIO** uses [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS) for Javascript interop allowing strongly typed, full usage of the [socket.io](https://github.com/socket.io/socket.io) Javascript library. 
+**SpawnDev.BlazorJS.SocketIO** uses [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS) for Javascript interop allowing strongly typed, full access to the [socket.io](https://github.com/socket.io/socket.io) Javascript library. 
 
 ## Setup
 **Create a new Blazor WebAssembly Standalone App**  
