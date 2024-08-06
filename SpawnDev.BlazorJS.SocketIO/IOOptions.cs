@@ -59,7 +59,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// Either a single protocol string or an array of protocol strings. These strings are used to indicate sub-protocols, so that a single server can implement multiple WebSocket sub-protocols (for example, you might want one server to be able to handle different types of interactions depending on the specified protocol).
         /// </summary>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Union<string, string[]>? Protocols { get; set; }
+        public string[]? Protocols { get; set; }
         /// <summary>
         /// Additional query parameters (then found in socket.handshake.query object on the server-side).
         /// </summary>
@@ -96,7 +96,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// WebTransport<br/>
         /// </summary>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Union<string, string[]>? Transports { get; set; }
+        public string[]? Transports { get; set; }
         /// <summary>
         /// Whether the client should try to upgrade the transport from HTTP long-polling to something better.<br/>
         /// Default value: true
