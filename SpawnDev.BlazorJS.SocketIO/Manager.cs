@@ -29,30 +29,30 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <summary>
         /// Fired upon a connection error.
         /// </summary>
-        public JSEventCallback<Error> OnError { get => new JSEventCallback<Error>("error", On, RemoveListener); set { } }
+        public ActionEvent<Error> OnError { get => new ActionEvent<Error>("error", On, RemoveListener); set { } }
         /// <summary>
         /// Fired when a ping packet is received from the server.
         /// </summary>
-        public JSEventCallback OnPing { get => new JSEventCallback("ping", On, RemoveListener); set { } }
+        public ActionEvent OnPing { get => new ActionEvent("ping", On, RemoveListener); set { } }
         /// <summary>
         /// Fired upon a successful reconnection.<br/>
         /// attempt <number> reconnection attempt number
         /// </summary>
-        public JSEventCallback<int> OnReconnect { get => new JSEventCallback<int>("reconnect", On, RemoveListener); set { } }
+        public ActionEvent<int> OnReconnect { get => new ActionEvent<int>("reconnect", On, RemoveListener); set { } }
         /// <summary>
         /// Fired upon an attempt to reconnect.<br/>
         /// attempt <number> reconnection attempt number
         /// </summary>
-        public JSEventCallback<int> OnReconnectAttempt { get => new JSEventCallback<int>("reconnect_attempt", On, RemoveListener); set { } }
+        public ActionEvent<int> OnReconnectAttempt { get => new ActionEvent<int>("reconnect_attempt", On, RemoveListener); set { } }
         /// <summary>
         /// Fired upon a reconnection attempt error.<br/>
         /// error <Error> error object
         /// </summary>
-        public JSEventCallback<Error> OnReconnectError { get => new JSEventCallback<Error>("reconnect_error", On, RemoveListener); set { } }
+        public ActionEvent<Error> OnReconnectError { get => new ActionEvent<Error>("reconnect_error", On, RemoveListener); set { } }
         /// <summary>
         /// Fired when couldn't reconnect within reconnectionAttempts.
         /// </summary>
-        public JSEventCallback OnReconnectFailed { get => new JSEventCallback("reconnect_failed", On, RemoveListener); set { } }
+        public ActionEvent OnReconnectFailed { get => new ActionEvent("reconnect_failed", On, RemoveListener); set { } }
         /// <summary>
         /// If the manager was initiated with autoConnect to false, launch a new connection attempt.
         /// </summary>

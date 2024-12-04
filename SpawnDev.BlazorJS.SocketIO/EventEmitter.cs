@@ -27,11 +27,11 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// eventName string | Symbol - The name of the event being listened for<br />
         /// listener Function - The event handler function
         /// </summary>
-        public JSEventCallback<JSObject, Function> OnNewListener { get => new JSEventCallback<JSObject, Function>("newListener", On, RemoveListener); set { } }
+        public ActionEvent<JSObject, Function> OnNewListener { get => new ActionEvent<JSObject, Function>("newListener", On, RemoveListener); set { } }
         /// <summary>
         /// The 'removeListener' event is emitted after the listener is removed.
         /// </summary>
-        public JSEventCallback<JSObject, Function> OnRemoveListener { get => new JSEventCallback<JSObject, Function>("removeListener", On, RemoveListener); set { } }
+        public ActionEvent<JSObject, Function> OnRemoveListener { get => new ActionEvent<JSObject, Function>("removeListener", On, RemoveListener); set { } }
         /// <summary>
         /// Add an event handler
         /// </summary>

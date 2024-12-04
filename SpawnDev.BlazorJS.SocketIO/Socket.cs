@@ -66,15 +66,15 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// <summary>
         /// This event is fired by the Socket instance upon connection and reconnection.
         /// </summary>
-        public JSEventCallback OnConnect { get => new JSEventCallback("connect", On, RemoveListener); set { } }
+        public ActionEvent OnConnect { get => new ActionEvent("connect", On, RemoveListener); set { } }
         /// <summary>
         /// This event is fired upon connection failure.
         /// </summary>
-        public JSEventCallback<Error> OnError { get => new JSEventCallback<Error>("error", On, RemoveListener); set { } }
+        public ActionEvent<Error> OnError { get => new ActionEvent<Error>("error", On, RemoveListener); set { } }
         /// <summary>
         /// This event is fired upon disconnection.
         /// </summary>
-        public JSEventCallback OnDisconnect { get => new JSEventCallback("disconnect", On, RemoveListener); set { } }
+        public ActionEvent OnDisconnect { get => new ActionEvent("disconnect", On, RemoveListener); set { } }
         /// <summary>
         /// Manually disconnects the socket. In that case, the socket will not try to reconnect.
         /// </summary>
