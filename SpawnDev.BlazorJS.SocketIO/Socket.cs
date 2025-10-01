@@ -11,6 +11,7 @@ namespace SpawnDev.BlazorJS.SocketIO
     {
         // CDN 
         // https://cdn.socket.io/
+        // https://cdn.socket.io/4.8.1/socket.io.min.js
         static Task? _Init = null;
         /// <summary>
         /// Returns a Task that completes after loading the socket.io library
