@@ -68,8 +68,7 @@ socket.On<string>("welcome", welcomeMessage =>
     Console.WriteLine($"Welcome received: {welcomeMessage}");
 });
 
-await builder.Build().RunAsync();
-
+await builder.Build().BlazorJSRunAsync();
 ```
 
 Counter.razor
