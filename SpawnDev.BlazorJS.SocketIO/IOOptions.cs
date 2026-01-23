@@ -36,7 +36,7 @@ namespace SpawnDev.BlazorJS.SocketIO
         /// Additional headers (then found in socket.handshake.headers object on the server-side).
         /// </summary>
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Dictionary<string,string>? ExtraHeaders { get; set; }
+        public Dictionary<string, string>? ExtraHeaders { get; set; }
         /// <summary>
         /// With autoUnref set to true, the Socket.IO client will allow the program to exit if there is no other active timer/TCP socket in the event system (even if the client is connected):<br/>
         /// Default value: false
