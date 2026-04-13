@@ -368,9 +368,6 @@ var socket = new Socket("http://localhost:3000", new IOOptions
 {
     // Connection behavior
     Reconnection = true,
-    ReconnectionAttempts = 5,
-    ReconnectionDelay = 1000,
-    ReconnectionDelayMax = 5000,
 
     // Transport options
     Transports = new[] { "websocket", "polling" },
